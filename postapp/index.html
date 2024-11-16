@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Post</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
+    .post-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+      max-height: max-content;
+    }
+    .post-container h2 {
+      text-align: center;
+      color: #333;
+    }
+    .input-field {
+      width: 98%;
+      padding: 10px;
+      margin: 10px 0px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .file-input {
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .submit-button {
+      background-color: #81bcff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .submit-button:hover {
+      background-color: #81bcff;
+    }
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      color: rgb(51, 152, 219);
+      font-size: 18px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="post-container">
+    <h2>Create a Post</h2>
+    
+    <textarea id="post-text" class="input-field" rows="5" placeholder="Write your post here..."></textarea>
+    
+    <input type="file" id="post-photo" class="file-input" accept="image/*">
+    
+    <button class="submit-button" id="submit-button">Post</button>
+    
+    <div id="message" class="message">Posted!</div>
+  </div>
+
+  <script>
+    // Event listener for the post button
+    document.getElementById('submit-button').addEventListener('click', function() {
+      var text = document.getElementById('post-text').value;
+      var file = document.getElementById('post-photo').files[0];
+      
+      if (text || file) {
+        // Simulate posting logic
+        document.getElementById('message').style.display = 'block';
+        
+        // Optionally clear the input fields after posting
+        document.getElementById('post-text').value = '';
+        document.getElementById('post-photo').value = '';
+      } else {
+        alert('Please add some text or a photo to create a post.');
+      }
+    });
+  </script>
+
+</body>
+</html>
